@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
@@ -20,7 +20,7 @@ const SingleBeer = () => {
 
     const [singleBeer, setSingleBeer] = useState([]);
     const [similarBeers, setSimilarBeers] = useState([]);
-    
+
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState('');
 
@@ -30,7 +30,7 @@ const SingleBeer = () => {
     const navigate = useNavigate();
 
     /** Get Data */
-    const fetchBeerById = () => {    
+    const fetchBeerById = useCallback(() => {
         singleBeer_api(accessTokens, params.id)
             .then(response => {
                 setSingleBeer(...response);
@@ -40,14 +40,15 @@ const SingleBeer = () => {
                 setIsError(error.message);
                 setIsLoading(false);
             });
-    }
-    useEffect(()=> {
-        fetchBeerById();
-    },[]);
+    }, [accessTokens, params.id]);
 
-    const fetchSimilarBeers = () => {
-        if (singleBeer.abv && singleBeer.ibu) {
-            similarBeers_api(accessTokens, Math.round(singleBeer.ibu), Math.round(singleBeer.abv))
+    useEffect(() => {
+        fetchBeerById();
+    }, [fetchBeerById]);
+
+
+    const fetchSimilarBeers = useCallback((beerIbu, beerAbv) => {
+        similarBeers_api(accessTokens, beerIbu, beerAbv)
             .then(response => {
                 setSimilarBeers(response);
                 setIsLoading(false);
@@ -56,11 +57,13 @@ const SingleBeer = () => {
                 setIsError(error.message);
                 setIsLoading(false);
             });
+    }, [accessTokens]);
+
+    useEffect(() => {
+        if (singleBeer.length !== 0 ) {
+            fetchSimilarBeers(Math.round(singleBeer.ibu), Math.round(singleBeer.abv));
         }
-    }
-    useEffect(()=> {
-        fetchSimilarBeers();
-    },[singleBeer]);
+    }, [fetchSimilarBeers, singleBeer]);
 
 
     /** Add data to cart */
@@ -90,7 +93,7 @@ const SingleBeer = () => {
 
     return (
         <main className='page page__single-beer'>
-            
+
             { isLoading && <Loader /> }
 
             { isError && <h1 className="error-message">{`Something is wrong: "${isError}"`}</h1> }

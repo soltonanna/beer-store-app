@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/beer-store-app/static/css/main.42cf9fa3.css",
-    "main.js": "/beer-store-app/static/js/main.8aa55e1b.js",
+    "main.js": "/beer-store-app/static/js/main.d5678be9.js",
     "static/media/logo.png": "/beer-store-app/static/media/logo.da2694b1d5a817bcb279.png",
     "index.html": "/beer-store-app/index.html",
     "main.42cf9fa3.css.map": "/beer-store-app/static/css/main.42cf9fa3.css.map",
-    "main.8aa55e1b.js.map": "/beer-store-app/static/js/main.8aa55e1b.js.map"
+    "main.d5678be9.js.map": "/beer-store-app/static/js/main.d5678be9.js.map"
   },
   "entrypoints": [
     "static/css/main.42cf9fa3.css",
-    "static/js/main.8aa55e1b.js"
+    "static/js/main.d5678be9.js"
   ]
 }

@@ -18,7 +18,7 @@ export default class BeersService {
         const url = dateStrBefore 
             ? `https://api.punkapi.com/v2/beers?brewed_before=${dateStrBefore}` 
             : `https://api.punkapi.com/v2/beers?brewed_after=${dateStrAfter}`;
-            console.log(url)
+
             const response = await axios.get(url, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
