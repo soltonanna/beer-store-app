@@ -1,0 +1,22 @@
+/* Main styles */
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/style';
+
+/* Pages styles */
+@import './pages/Home/Home.scss';
+@import './pages/Single/SingleBeer.scss';
+@import './pages/Cart/Cart.scss';
+@import './pages/Contact/Contact.scss';
+
+
+/* Component styles */
+@import './components/Header/Header.scss';
+@import './components/Footer/Footer.scss';
+@import './components/UI/Modal/Modal.scss';
+@import './components/UI/FormItems/FormItems.scss';
+@import './components/CartItem/CartItem.scss';
+@import './components/UI/Filters/Filters.scss';
+@import './components/UI/Loader/Loader.scss';
+@import './components/SimilarItems/SimilarItems.scss';
+@import './components/BeerItem/BeerItem.scss';

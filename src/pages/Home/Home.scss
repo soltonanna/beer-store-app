@@ -1,0 +1,14 @@
+#root {
+    .beer-store {
+        main {
+            &.page__home {
+                background-color: #ffffff;
+
+                .beer-list {
+                    @include displayFlex(row, wrap, center, flex-start, flex-start);
+                    padding: 5rem 0;
+                }
+            }
+        }
+    }
+}

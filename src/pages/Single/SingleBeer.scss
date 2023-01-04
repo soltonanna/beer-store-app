@@ -1,0 +1,92 @@
+#root {
+    .beer-store {
+        main {
+            &.page__single-beer {
+                background-color: #ffffff;
+                padding: 5rem 0;
+
+                .single-item {
+                    @include displayFlex(row, wrap, center, space-between, flex-start);
+                    min-height: 400px;
+                    
+                    &__go-back {
+                        left: 20px;
+                        width: 150px;
+                        cursor: pointer;
+                        position: absolute;
+                        color: $text-color;
+                        font-size: 1.6rem;
+                        @include displayFlex(row, wrap, center, center, center);
+
+                        svg {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &__img {
+                        width: 40%; height: 400px;
+
+                        div {
+                            width: 100%; height: 100%;
+                            background-size: contain;
+                            background-position: center top;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    &__info {
+                        width: 58%;
+                        @include displayFlex(column, wrap, center, center, flex-start);
+
+                        .beer-params {
+                            color: $text-color;
+                            font-weight: 600;
+                            font-size: 2.2rem;
+                        }
+
+                        .title {
+                            margin: 1rem 0;
+                            font-weight: 900;
+                            color: $main-color;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            font-family: 'Lato', sans-serif;
+                            font-size: 3rem;
+                        }
+                        .description {
+                            margin-bottom: 2rem;
+                            text-align: justify;
+                            color: $main-color;
+                            font-size: 1.6rem;
+
+                            span {
+                                color: $text-color;
+                                font-style: italic;
+                                margin-top: 20px;
+                                display: block;
+                            }
+                        }
+
+                        .price {
+                            color: $text-color;
+                            font-weight: 900;
+                            font-family: 'Rochester', cursive;
+                            font-size: 2.6rem;
+                        }
+
+                        .add-to-cart-block {
+                            margin: 2rem 0;
+
+                            form {
+                                @include displayFlex(row, wrap, center, center, center);
+
+                                input {
+                                    padding: 16px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

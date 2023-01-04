@@ -1,0 +1,126 @@
+#root {
+    header {
+        // background:linear-gradient(
+        //     0deg, 
+        //     rgba(0, 0, 0, 0.9), 
+        //     rgba(26, 25, 26, 0.9)
+        // ), 
+        // url('./asset/beer_back.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center, center;
+        border-bottom: 5px solid $text-color;
+
+        /* FIRST HEADER PART WITH SOCIAL MEDIA, SEARCH AND CART ICON */
+        #social-search-cart {
+            width: 100%;
+            border-bottom: 1px solid #363636;
+            @include displayFlex(row, nowrap, center, space-between, center);
+
+            .social-icons {
+                @include socialIcons(13%, #363636);
+                @include displayFlex(row, nowrap, center, center, center);
+            }
+            
+            & > div {
+                @include displayFlex(row, nowrap, center, space-between, center);
+
+                #search {
+                    padding: 20px 50px;
+                    border-right: 1px solid #363636;
+                    border-left: 1px solid #363636;
+
+                    svg {
+                        margin-right: 5px;
+                    }
+                }
+
+                #cart {
+                    text-decoration: none;
+                    padding: 20px 30px;
+                    color: $text-color;
+                    transition: all .5s;
+
+                    svg {
+                        padding-top: 3px;
+                        margin-right: 5px;
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+                    }
+                }
+            }
+            
+        }
+
+        /* SECOND HEADER PART WITH LOGO AND NAVBAR */
+        #logo-navbar {
+            width: 100%;
+            padding: 30px 0;
+            margin-bottom: 5rem;
+            @include displayFlex(row, nowrap, center, space-between, center);
+
+            #logo {
+                width: 13%;
+                text-align: center;
+                cursor:pointer;
+                
+                img {
+                    width: 100px;
+                }
+
+                h3 {
+                    color: #ffffff;
+                    letter-spacing: 4px;
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    
+                    span {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+
+            #navbar {
+
+                &__links a {
+                    border: 1px solid transparent;
+                    font-size: $navbar-font-size;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 15px 20px;
+                    color: #ffffff;
+                    transition: all .5s;
+
+                    &.active,
+                    &:hover {
+                        border: 1px solid $text-color;
+                    }
+                }
+            }
+        }
+
+        /* THIRD HEADER PART WITH TITLES */
+        .main-title {
+            text-align: center;
+            padding-bottom: 50px;
+            
+            h2 {
+                font-size: 2.7rem;
+                font-family: 'Great Vibes', cursive;
+                text-transform: capitalize;
+                word-spacing: 5px;
+                color: $text-color;
+            }
+            h1 {
+                font-size: 3.3rem;
+                font-family: 'Lato', sans-serif;
+                letter-spacing: 12px;
+                font-weight: 900;
+                text-transform: uppercase;
+                color: #ffffff;
+            }
+        }
+    }
+}

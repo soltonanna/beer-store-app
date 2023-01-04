@@ -1,0 +1,20 @@
+#root {
+    .beer-store {
+        main {
+            &.page__cart {
+                background-color: #ffffff;
+                padding: 5rem 0;  
+                color: $main-color;
+                
+                .total-amount {
+                    font-family: 'Rochester', cursive;
+                    font-size: 3.3rem;
+                    color: $text-color;
+                    text-align: right; 
+                    font-weight: 900;
+                    margin: 20px 0 0; 
+                }
+            }
+        }
+    }
+}

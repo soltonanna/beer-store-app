@@ -1,0 +1,31 @@
+.filters-main-block {
+    background-color: $main-color;
+    padding: 2rem 0;
+
+    .container {
+        @include displayFlex(row, wrap, center, space-between, flex-start);
+
+        .search-filters {
+            @include displayFlex(row, wrap, center, space-between, flex-start);
+            width: 100%;
+
+            .filter-after,
+            .filter-before {
+                span {
+                    font-size: 1.6rem;
+                    color: $text-color;
+                }
+                div {
+                    margin: 0 10px;
+                    background-color: transparent;
+                    color: $text-color;
+                    border-color: $text-color;
+                    
+                    input {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}

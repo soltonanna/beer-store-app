@@ -1,0 +1,63 @@
+.beer-item {
+    height: 500px;
+    width: 30.333333%; 
+    max-width: 30.333333%;
+    flex: 0 0 30.333333%;
+    text-align: center;
+    position: relative;
+    border: 1px solid #e9e9e9;
+    @include displayFlex(column, nowrap, center, space-around, center);
+
+    &__img {
+        width: 100%; height: 80%;
+        background-size: contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+
+        svg {
+            color: $text-color;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__title {
+        color: $text-color;
+        letter-spacing: 2px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
+        width: 80%;
+
+        span {
+            display: block;
+            font-size: 1.6rem;
+            font-style: italic;
+            text-transform: capitalize;
+        }
+    }
+
+    &__price {
+        font-family: 'Rochester', cursive;
+        color: $main-color;
+        font-size: 1.6rem;
+    }
+
+    &__on-hover {
+        position: absolute;
+        left: 0; top:0;
+        width: 100%; height: 100%;
+        z-index: 10;
+        background-color: rgba($text-color, 0.5);
+        @include displayFlex(column, wrap, center, center, center);
+
+        p {
+            background-color: #ffffff;
+            border:1px solid $text-color;
+            padding: 2px;
+        }
+       
+    }
+}

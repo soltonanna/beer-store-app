@@ -1,0 +1,22 @@
+#root {
+    .beer-store {
+        main {
+            &.page__contact {
+                .container > div {
+                    @include displayFlex(row, wrap, center, space-between, flex-start);
+
+                    & > div {
+                        width: 48%;
+                    }
+                }
+                label {
+                    font-size: 1.6rem;
+                    color: $main-color;
+                    min-width: 100px;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
