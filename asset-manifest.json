@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.a204f959.js",
-    "index.html": "/index.html",
-    "main.a204f959.js.map": "/static/js/main.a204f959.js.map"
+    "main.js": "/beer-store-app/static/js/main.e15e1365.js",
+    "index.html": "/beer-store-app/index.html",
+    "main.e15e1365.js.map": "/beer-store-app/static/js/main.e15e1365.js.map"
   },
   "entrypoints": [
-    "static/js/main.a204f959.js"
+    "static/js/main.e15e1365.js"
   ]
 }
