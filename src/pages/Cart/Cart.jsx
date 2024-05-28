@@ -7,8 +7,8 @@ const Cart = () => {
 
     const hasItems = cartCtx.items.length > 0;
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-
-    const cartItemRemoveHandler = id => {
+// TODO
+    const cartItemRemoveHandler = id => () => {
         cartCtx.removeItem(id);
     };
     const cartItemAddHandler = item => {
@@ -29,8 +29,8 @@ const Cart = () => {
                                 amount={item.amount} 
                                 price={item.price} 
                                 img={item.img} 
-                                onRemove={cartItemRemoveHandler.bind(null, item.id)}
-                                onAdd={cartItemAddHandler.bind(null, item)}
+                                onRemove={cartItemRemoveHandler(item.id)}
+                                onAdd={cartItemAddHandler(item)}
                             /> 
                             ))
                         }

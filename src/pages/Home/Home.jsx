@@ -24,7 +24,7 @@ const Home = () => {
     const [dateStrAfter, setDateStrAfter] = useState('');
 
     /** For pagination */
-    const [limit, setLimit] = useState(9);
+    const [limit, setLimit] = useState(18);
     const [page, setPage] = useState(1);
     const [isFetching, setIsFetching] = useState(true);
 
@@ -73,8 +73,10 @@ const Home = () => {
       beersFilteredData.length === 0 ? beersData : beersFilteredData, 
       search.query
     );
+    // TODO. all items.
 
     /** Lazy Load */
+    // Scroll issue
     useEffect(() => {
       const handlerScroll = (e) => {
         const scrollHeight = e.target.documentElement.scrollHeight;
@@ -82,7 +84,7 @@ const Home = () => {
         if ( scrollHeight - currentHeight < 500) {
           setIsFetching(true);
           setIsLoading(true);
-          setLimit(18);
+          setLimit(9);
         }
       }
       window.addEventListener('scroll', handlerScroll);

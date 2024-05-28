@@ -29,7 +29,7 @@ import axios from 'axios';
 //     }
 // }
 
-export const beers_api = async (accessToken, limit = 9, page = 1 ) => {
+export const beers_api = async (accessToken, limit = 18, page = 1 ) => {
     return await axios.get(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${limit}`, {
         headers: {
             Authorization: `Bearer ${accessToken}`
@@ -43,7 +43,7 @@ export const beers_api = async (accessToken, limit = 9, page = 1 ) => {
 }
 
 export const filter_api = async(accessToken, dateStrBefore = '', dateStrAfter = '') => {
-
+// TODO : date range
     const url = dateStrBefore 
         ? `https://api.punkapi.com/v2/beers?brewed_before=${dateStrBefore}` 
         : `https://api.punkapi.com/v2/beers?brewed_after=${dateStrAfter}`;
@@ -85,3 +85,6 @@ export const similarBeers_api = async(accessToken, ibu_gt, abv_gt) => {
         throw new Error(message)
     });
 }
+
+
+// TODO axios midlware.... accessToken., global

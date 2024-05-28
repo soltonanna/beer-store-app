@@ -90,7 +90,7 @@ const SingleBeer = () => {
             img={item.img} 
         /> 
     ));
-
+// TODO fix isloader, iserror,,,,
     return (
         <main className='page page__single-beer'>
 

@@ -20,8 +20,8 @@ export const AuthProvider = ({children}) => {
         return () => {
             clearInterval(interval);
         };
-    }, [accessTokens]);
-
+    }, []);  //accessTokens
+    //  TODO
     const contextData = {
         accessTokens: accessTokens,
     }
